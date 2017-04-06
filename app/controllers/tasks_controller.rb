@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
+  protect_from_forgery :except => :create
   def create
-    raise param.inspect
+    render text: Task.new.hy(params)
   end
 end
+
